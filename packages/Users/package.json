@@ -1,19 +1,32 @@
 {
   "name": "users",
   "version": "0.0.0",
+  "type": "module",
   "description": "> TODO: description",
   "author": "Aaron Beavers <foamy125@gmail.com>",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/Users.js",
+  "main": "src/index.js",
   "directories": {
-    "lib": "lib",
-    "test": "__tests__"
+    "test": "test",
+    "src": "src",
+    "static": "static"
   },
   "files": [
-    "lib"
+    "static",
+    "src"
   ],
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "start": "node src/index.js",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha --timeout 20s -r @babel/register"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "jwt-promise": "^1.0.0",
+    "mongoose": "^5.11.18",
+    "mongoose-bcrypt": "^1.9.0"
   }
 }

@@ -1,4 +1,5 @@
 
+
 export function train(text, m, rg) {
   if( !!text.length&& ! rg.test(text) )
   {
